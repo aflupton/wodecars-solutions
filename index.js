@@ -37,3 +37,8 @@ const getFirstLongestString = strArr => {
   }
   return firstlongestString
 }
+
+//returns sum of series of fractions
+function SeriesSum(n, s = 0) {
+  return n ? SeriesSum(n - 1, s + 1 / (3 * n - 2)) : s.toFixed(2)
+}
