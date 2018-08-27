@@ -42,3 +42,10 @@ const getFirstLongestString = strArr => {
 function SeriesSum(n, s = 0) {
   return n ? SeriesSum(n - 1, s + 1 / (3 * n - 2)) : s.toFixed(2)
 }
+
+// given odd length array of ints, return the 'stray' or unlike int from the array
+function stray(numbers) {
+  return numbers.reduce((a, b) => {
+    return (a ^ b);
+  });
+}
