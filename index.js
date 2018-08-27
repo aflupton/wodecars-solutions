@@ -49,3 +49,18 @@ function stray(numbers) {
     return (a ^ b);
   });
 }
+
+
+// return a filtered array that deletes elements occurring more than n times
+function deleteNth(arr,n){
+  const occurrences = {};
+  return arr.filter((num) => {
+    occurrences[num] = (occurrences[num] || 0) + 1;
+    return (occurrences[num] <= n);
+  })
+}
+// this is a refactored version of the above
+function deleteNth(arr, n){
+  const occurrences = {};
+  return arr.filter((num) => (occurrences[num]) = ~~(occurrences[num] || 0) + 1);
+}
