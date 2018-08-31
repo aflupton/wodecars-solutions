@@ -75,3 +75,26 @@ var number = busStops => busStops.map((busStops) => (cache - busStops[1] + busSt
 
 // and a solution from codewars, which removes the need for .map, by wrapping that functionality into .reduce
 const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+
+// highest scoring word (via alphabet position) from a string
+function high(x) {
+  function wordScore(word) {
+    const alphabet = Array.from("abcdefghijklmnopqrstuvwxyz");
+    let score = 0;
+    word.split('').map(function(letter) {
+      score += alphabet.indexOf(letter) + 1;
+    });
+    return score;
+  }
+  let highestScoringWord = '';
+  let highestScore = 0;
+  x.split(' ').map(function(word) {
+    let score = wordScore(word);
+    if (score > highestScore) {
+      highestScore = score;
+      highestScoringWord = word;
+    }
+  });
+  return highestScoringWord;
+}
+  
