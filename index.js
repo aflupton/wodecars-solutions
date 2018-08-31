@@ -64,3 +64,14 @@ function deleteNth(arr, n){
   const occurrences = {};
   return arr.filter((num) => (occurrences[num]) = ~~(occurrences[num] || 0) + 1);
 }
+
+// count the number of people on a bus after a variable number of stops
+var number = function(busStops) {
+  let cache = 0;
+  return busStops.map((busStops) => (cache - busStops[1] + busStops[0])).reduce((a, b) => (a+b));
+}
+// single line refactor
+var number = busStops => busStops.map((busStops) => (cache - busStops[1] + busStops[0])).reduce((a, b) => (a + b));
+
+// and a solution from codewars, which removes the need for .map, by wrapping that functionality into .reduce
+const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
